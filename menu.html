@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jędrzejewski</title>
+    <link href="main.4ff02466.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Playfair+Display:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <button class="navigation-trigger" id="navigationTrigger">
+                <span class="navigation-trigger__bar"></span>
+                <span class="navigation-trigger__bar"></span>
+                <span class="navigation-trigger__bar"></span>
+                <span class="navigation-trigger__bar"></span>
+            </button>
+            <div class="header__logo">
+                <a href="/">
+                    <img src="img_03.4b84297b.png" alt="Jędrzejewski - catering">
+                </a>
+            </div>
+        </div>
+        <nav class="navigation" id="navigation">
+            <ul class="navigation__list">
+                <li class="navigation__item">
+                    <a href="menu.html" class="navigation__link">Wesela</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="decorations.html" class="navigation__link">Dekoracje</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="komunie.html" class="navigation__link">Komunie</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="imprezy-okol.html" class="navigation__link">Imprezy okolicznościowe</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="przyjecia-weselne.html" class="navigation__link">Przyjęcia weselne</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="catering.html" class="navigation__link">Catering</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="contact.html" class="navigation__link">Kontakt </a>
+                </li>
+            </ul>
+        </nav>
+    </header><button class="summary-trigger">+</button>
+<div class="summary">
+    <h2 class="summary__title">Podsumowanie</h2>
+    <div class="summary__settings">
+        <p>Planowany termin (wpisz datę lub przedział czasu)</p>
+        <input type="text" class="summary__input" id="date">
+        <p>Koszt oblicz dla 
+            <input type="number" min="0" required="" id="numberOfAdult" class="summary__input summary__input--small"> 
+            osób, w tym 
+            <input type="number" min="0" required="" id="numberOfChild" class="summary__input summary__input--small"> 
+            dzieci w wieku 4-9 lat.
+        </p>
+    </div>
+    <div class="summary__costs">
+        <p>Szacowany koszt</p>
+        <p class="cost" id="cost">6500</p>
+        <p>Koszt za osobę</p>
+        <p class="cost" id="costPerPerson">180</p>
+        <div class="line"></div>
+        <ul class="summary__list">
+
+        </ul>
+        <div class="line">
+        </div>
+
+        <button class="btn btn--bordered" id="openModal">Wyślij zapytanie mailem</button>
+        <button class="btn btn--bordered">Zadzwoń XXX-XXX-XXX</button>
+    </div>
+</div><div class="modal">
+    <div class="modal__card">
+        <h2 class="modal__title">Podaj swój e-mail</h2>
+        <form class="modal__form" method="POST" action="/api/sendoffer.php">
+            <input name="date" type="hidden" id="dateSummary">
+            <input name="persons" type="hidden" id="persons">
+            <input name="childs" type="hidden" id="childs">
+            <input name="total" type="hidden" id="total">
+            <input name="perperson" type="hidden" id="perperson">
+            <input name="summary" type="hidden" id="summary">
+            <input name="email" class="modal__input" type="email" id="userEmail" required="">
+            <button type="submit" class="btn btn--bordered" id="sendOffer"> Wyślij ofertę</button>
+        </form>
+        <button class="btn btn--bordered" id="closeModal">Zamknij</button>
+    </div>
+</div><main class="main-container grid grid--menu">
+    <div>
+    <h1 class="content__title content__title--gray">menu</h1>
+    
+        <div class="menu">
+            <h2 class="menu__title">
+                Oferta weselna 2018
+            </h2>
+            <div class="menu__gallery">
+                <img src="menu_03.15a07e2c.jpg" class="main" alt="">
+                <img src="menu_03.15a07e2c.jpg" alt="">
+                <img src="menu_03.15a07e2c.jpg" alt="">
+            </div>
+            <div>
+
+            <ul class="menu__description">
+                <li>Koszt podstawowy 180 PLN za osobę</li>
+                <li>Czas trwania: całonocna zabawa do 10 godzin</li>
+                <li>Minimalna ilość osób: 60</li>
+
+            </ul>
+            <div class="menu__variant">
+                <ul class="menu__variant-list">
+                    <li>przywitanie gości lampką wina musującego</li>
+                    <li>przywitanie Pary Młodej tradycyjnym chlebkiem i dwoma kieliszkami do bicia</li>
+                    <li>4 ciepłe dania (dwudaniowa uroczysta kolacja na przywitanie gości, 1 główne danie serwowane przed północą, 1 danie kokilkowe po północy)</li>
+                    <li>6 rodzajów przekąsek i 2 rodzaje sałatek</li>
+                    <li>bufet deserowo-kawowy z owocami</li>
+                    <li>zimne napoje – woda, soki i napoje gazowane</li>
+                </ul>
+                <button class="btn btn--add" disabled="">w cenie</button>
+            </div>
+            <div class="menu__variant">
+                <ul class="menu__variant-list">
+                    <li>1 danie koktajlowe serwowane po północy (łącznie 5)</li>
+                    <li>1 przekąska i + 1 sałatka (łącznie 7 przekąsek i 3 sałatki)</li>
+                </ul>
+                <button class="btn btn--add" data-id="MENU2">+ 15zł / os</button>
+            </div>
+            <div class="menu__variant">
+                <ul class="menu__variant-list">
+
+                    <li> 1 danie koktajlowe serwowane po północy<br> (łącznie 5)</li>
+                    <li>deser serwowany podczas uroczystej kolacji</li>
+                    <li> 2 przekąski + 1 sałatka<br> (łącznie 8 przekąsek + 3 sałatki)</li>
+                    <li> możliwość wyboru dań z rozszerzonego menu</li>
+                </ul>
+                <button class="btn btn--add" data-id="MENU3">+ 30zł / os</button>
+            </div>
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu__title">
+                <span>Stół wiejski</span>
+            </h2>
+            <div class="menu__gallery">
+                <img src="menu_08.a0010639.jpg" alt="" class="main">
+            </div>
+            <div>
+                <div class="menu__variant">
+                    <p>Dla najbardziej wymagających...</p>
+                    <button class="btn btn--add" data-id="STOLWIEJSKI">+1200zł / os</button>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu__title">
+                <span>Fontanna czekoladowa</span>
+            </h2>
+            <div class="menu__gallery">
+                <img src="menu_10.9392118d.jpg" alt="" class="main">
+            </div>
+            <div>
+                <p>
+                    Dla lubiących słodkości...
+                </p>
+                <div class="menu__variant">
+                    <p>Cena do 70 osób</p> 
+                    <button class="btn btn--add" data-id="FONTANNA1">+ 600zł / os</button>
+                </div>
+                <div class="menu__variant">
+                    <p>Cena do 90 osób</p>
+                    <button class="btn btn--add" data-id="FONTANNA2">+ 800zł / os</button>
+                </div>
+                <div class="menu__variant">
+                    <p>Cena powyżej 90 osób</p>
+                    <button class="btn btn--add" data-id="FONTANNA3">+ 1000zł / os</button>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu__title">
+                <span>Alkohol</span>
+            </h2>
+            <div class="menu__gallery menu__gallery--full-width">
+                <img src="menu_12.9dc6a9de.jpg" alt="" class="main">
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu__title">
+                <span>Korkowe</span>
+            </h2>
+            <div class="menu__full-grid">
+                <div class="menu__variant">
+                    <p>Goście którzy chcą wykorzystać...</p>
+                    <button class="btn btn--add" data-id="KORKOWE">+ 10zł / os</button>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu__title">
+                <span>Opłata za butelkę</span>
+            </h2>
+            <div class="menu__full-grid">
+                <div class="menu__variant">
+                    <p>Naliczana za każdą napoczętą butelkę wg poniższego cennika z 0.5l. Podpowiedź: na weselu do 100 osób schodzi zazwyczaj 40 butelek wódki i 20 wina. </p>
+                </div>
+                <div class="pricing">
+                    <h3 class="pricing__title">Liczba butelek</h3>
+                    <p>Żubrówka 26zł</p>
+                    <div class="pricing__group">
+                        <input type="number" min="0" class="pricing__input" data-id="ZUBROWKA">
+                    </div>
+                    <p>Wyborowa 29zł</p>
+                    <div class="pricing__group">
+                        <input type="number" min="0" class="pricing__input" data-id="WYBOROWA">
+                    </div>
+                    <p>Stumbras 35zł</p>
+                    <div class="pricing__group">
+                        <input type="number" min="0" class="pricing__input" data-id="STUMBRAS">
+                    </div>
+                    <p>Finlandia 39zł</p>
+                    <div class="pricing__group">
+                        <input type="number" min="0" class="pricing__input" data-id="FINLANDIA">
+                    </div>
+                    <p>Butelka wina 23zł</p>
+                    <div class="pricing__group">
+                        <input type="number" min="0" class="pricing__input" data-id="WINO">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu__title">
+                <span>Open Bar</span>
+            </h2>
+            <div class="menu__full-grid">
+                <div class="menu__variant">
+                    <ul class="menu__variant-list">
+                        <li>Open bar</li>
+                        <li>Barman (maksymalnie do 7 godzin)</li>
+                    </ul>
+                    <button class="btn btn--add" data-id="OPENBAR">+ 65zł / os</button>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu__title">
+                <span>Dekoracje</span>
+            </h2>
+            <div class="menu__gallery menu__gallery--full-width">
+                <img src="menu_15.71e908e8.jpg" alt="" class="main">
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu__title">Dekoracje ogrodu</h2>
+            <div class="menu__full-grid">
+                <div class="menu__variant">
+                    <ul class="menu__variant-list">
+                        <li>dekoracje i aranżacja terenu</li>
+                    </ul>
+                    <button class="btn btn--add" disabled="">w cenie</button>
+                </div>
+                <div class="menu__variant">
+                    <ul class="menu__variant-list">
+                        <li>płonąca misa podczas wieczornych uroczystości</li>
+                    </ul>
+                    <button class="btn btn--add" data-id="PLONACA_MISA">+ 200zł</button>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu__title">Dekoracje sali</h2>
+            <div class="menu__full-grid">
+                <div class="menu__variant">
+                    <ul class="menu__variant-list">
+                        <li>niskie bukiety z mieszanych kwiatów...</li>
+                    </ul>
+                    <button class="btn btn--add" disabled="">w cenie</button>
+                </div>
+                <div class="menu__variant">
+                    <ul class="menu__variant-list">
+                        <li>świece na stołach gości</li>
+                    </ul>
+                    <button class="btn btn--add" data-id="DEKORACJE_SALI_1">+ 5zł / os</button>
+                </div>
+                <div class="menu__variant">
+                    <ul class="menu__variant-list">
+                        <li>kompozycje kwiatowe o różnych formatach</li>
+                    </ul>
+                    <button class="btn btn--add" data-id="DEKORACJE_SALI_2">+ 400zł</button>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu__title">Stół pary młodej</h2>
+            <div class="menu__full-grid">
+                <div class="menu__variant">
+                    <ul class="menu__variant-list">
+                        <li>dekoracje kieliszków powitalnych Państwa młodych</li>
+                    </ul>
+                    <button class="btn btn--add" disabled="">w cenie</button>
+                </div>
+                <div class="menu__variant">
+                    <ul class="menu__variant-list">
+                        <li>kompozycja kwiatowa przed Parą Młodą</li>
+                    </ul>
+                    <button class="btn btn--add" data-id="STOL_PANSTWA_MLODYCH_2">+ 200zł</button>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu__title">Wiązanka ślubna z butonierką</h2>
+            <div class="menu__full-grid">
+                <div class="menu__variant">
+                    <ul class="menu__variant-list">
+                        <li>ślubna dekoracja dla pana młodego</li>
+                        <li>ślubna dekoracja dla pani młodej</li>
+                    </ul>
+                    <button class="btn btn--add" data-id="WIAZANKA_SLUBNA">+ 50zł</button>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu__title">Dekoracje ślubne dla druhny i druha</h2>
+            <div class="menu__gallery">
+                <img src="menu_17.897e60d9.jpg" alt="" class="main">
+            </div>
+            <div class="menu__variant">
+                <p>Dodatki na rękę dla druhny</p>
+                <button class="btn btn--add" data-id="DODATKI_DRUHNA">+ 100zł</button>
+            </div>
+            <div class="menu__gallery">
+                <img src="menu_20.d7071d26.jpg" alt="" class="main">
+            </div>
+            <div class="menu__variant">
+                <p>Dodatki na rękę dla druhny</p>
+                <button class="btn btn--add" data-id="DODATKI_DRUHNA_2">+ 100zł</button>
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu__title">Dekoracje auta</h2>
+            <div class="menu__gallery">
+                <img src="menu_22.1451e64e.jpg" alt="" class="main">
+            </div>
+            <div class="menu__variant">
+                <p>Przykład 1</p>
+                <button class="btn btn--add" data-id="DEKORACJE_AUTA">+ 500zł</button>
+            </div>
+            <div class="menu__gallery">
+                <img src="menu_24.0028a5f2.jpg" alt="" class="main">
+            </div>
+            <div class="menu__variant">
+                <p>Przykład 2</p>
+                <button class="btn btn--add" data-id="DEKORACJE_AUTA_2">+ 750zł</button>
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu__title">
+                Dodatki
+            </h2>
+            <div class="menu__gallery menu__gallery--full-width">
+                <img src="menu_26.40f953cb.jpg" alt="" class="main">
+            </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu__title">Pokaz fajerwerków</h2>
+                <div class="menu__gallery">
+                    <img src="menu_29.aef0354b.jpg" alt="" class="main">
+                </div>
+
+                <div class="menu__variant">
+                    <ul class="menu__variant-list">
+                        <li>pokaz trwa 3 minuty</li>
+                        <li>składa się z 13 rodzajów fajerwerków</li>
+                    </ul>
+                    <button class="btn btn--add" data-id="FAJERWERKI">+ 1200zł</button>
+                </div>
+        </div>
+        <div class="menu">
+            <h2 class="menu__title">
+                Podziękowania dla rodziców
+            </h2>
+            <div class="menu__gallery">
+                <img src="menu_32.4d76fbbd.jpg" alt="" class="main">
+            </div>
+            <div class="menu__variant">
+                <p>PAKIET PODSTAWOWY <br>zawiera pudełka z czekoladkami</p>
+                <button class="btn btn--add" data-id="PODZIEKOWANIA_1">+ 800zł</button>
+            </div>
+            <div class="menu__gallery">
+                <img src="menu_34.c64b4553.jpg" alt="" class="main">
+            </div>
+            <div class="menu__variant">
+                <div>
+                    <p>PAKIET MEDIUM</p>
+                    <p>dla rodziców przygotowane są specjalne grawery...</p>
+                </div>
+                <button class="btn btn--add" data-id="PODZIEKOWANIA_2">+ 1000zł</button>
+            </div>
+        </div>
+    </div>
+          
+</main> 
+    <footer class="footer">
+        <p class="footer__content">
+            <a href="/">Jędrzejewski</a>
+        </p>
+        <ul class="social-icons">
+            <li class="social-icons__item">
+                <a href="#">
+                    <span class="fa fa-facebook"></span>
+                </a>
+            </li>
+            <li class="social-icons__item">
+                <a href="#">
+                    <span class="fa fa-twitter"></span>
+                </a>
+            </li>
+            <li class="social-icons__item">
+                <a href="#">
+                    <span class="fa fa-google-plus"></span>
+                </a>
+            </li>
+            <li class="social-icons__item">
+                <a href="#">
+                    <span class="fa fa-behance"></span>
+                </a>
+            </li>
+            <li class="social-icons__item">
+                <a href="#">
+                    <span class="fa fa-pinterest"></span>
+                </a>
+            </li>
+            <li class="social-icons__item">
+                <a href="#">
+                    <span class="fa fa-instagram"></span>
+                </a>
+            </li>
+        </ul>
+    </footer>    <script src="js.2ccee1d7.js"></script>
+</body>
+</html>
